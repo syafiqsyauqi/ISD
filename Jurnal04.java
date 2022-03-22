@@ -1,0 +1,61 @@
+import java.util.*;
+ class PlayList {
+    private String musik;
+
+
+    PlayList(String musik){
+        this.musik = musik;
+ 
+    }
+    public String getMusik(){
+        return musik;
+    }
+    public String toString(){
+        return (" Musik : "+ musik);
+    }
+}    
+public class Datamusik{
+    public static void main(String[] agrs){
+        Collection<PlayList> c = new ArrayList<PlayList>();
+        Scanner input = new Scanner(System.in);
+        Scanner input2 = new Scanner(System.in);
+        int pilih;
+        do{
+            System.out.println("PILIH MENU");
+            System.out.println("1.INPUT MUSIK");
+            System.out.println("2.PLAY MUSIK");
+            System.out.println("3.HAPUS MUSIK");
+            System.out.println("4.KELUAR");
+            pilih = input.nextInt();
+            switch(pilih){
+                case 1:
+                    System.out.print("JUDUL MUSIK :");
+                    String musik = input2.nextLine();
+                    c.add(new PlayList(musik));
+                break;
+                case 2:
+                    System.out.println(c);
+                break;
+                case 3:
+                   Boolean Data = false;
+                   System.out.println("MASUKAN JUDUL MUSIK YANG INGIN DI HAPUS :  ");
+                    Iterator <PlayList> i = c.iterator();
+                    musik = input2.nextLine();
+                    i = c.iterator();
+                    while(i.hasNext()){
+                        PlayList e = i.next();
+                        if(e.getMusik()== musik){
+                            i.remove();
+                            Data = true;
+                        }
+                    }
+                    if(!Data){
+                        System.out.println("Data Not Found");
+                    }else{
+                        System.out.println("Data Sukses Di Hapus");
+                    }
+                break;
+            }
+        }while(pilih!=4);
+    }
+}
