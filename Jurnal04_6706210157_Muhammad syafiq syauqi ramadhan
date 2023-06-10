@@ -22,7 +22,7 @@ public class Datamusik{
         int pilih;
         do{
             System.out.println("PILIH MENU");
-            System.out.println("1.INPUT MUSIK");
+            System.out.println("1.INPUT MUSIKk");
             System.out.println("2.PLAY MUSIK");
             System.out.println("3.HAPUS MUSIK");
             System.out.println("4.KELUAR");
